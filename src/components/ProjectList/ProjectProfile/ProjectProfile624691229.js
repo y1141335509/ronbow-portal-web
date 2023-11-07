@@ -237,7 +237,7 @@ const ProjectProfile = () => (
 
 
 
-      <Form
+        <Form
           name="wrap"
           labelCol={{ flex: '140px' }} // Adjusted for better responsiveness
           wrapperCol={{ span: 14 }} // Adjusted for better responsiveness
@@ -264,7 +264,7 @@ const ProjectProfile = () => (
               </Form.Item>
             </Col>
             <Col span={4}>
-              <Button style={{ backgroundColor: 'rgb(93, 100, 101)', color: 'rgb(240, 236, 236)',}}>Connect</Button>
+              <Button style={{ backgroundColor: 'rgb(93, 100, 101)', color: 'rgb(240, 236, 236)', }}>Connect</Button>
             </Col>
           </Row>
         </Form>
@@ -431,12 +431,10 @@ const ProjectProfile = () => (
 
         <Form
           name="wrap"
-          labelCol={{ flex: '150px' }}
-          labelAlign="right"
-          labelWrap
-          wrapperCol={{ flex: 1 }}
+          labelCol={{ flex: '140px' }} // Adjusted for better responsiveness
+          wrapperCol={{ span: 14 }} // Adjusted for better responsiveness
           colon={false}
-          style={{ maxWidth: '100%', marginTop: '30px', }}
+          style={{ maxWidth: 800, marginTop: '30px', }}
         >
 
           <Row gutter={14}> {/* Use the gutter for spacing between columns */}

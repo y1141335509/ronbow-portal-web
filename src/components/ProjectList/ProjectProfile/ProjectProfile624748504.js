@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Collapse, Divider, Button, ConfigProvider, Menu, Row, Col, 
+  Collapse, Divider, Button, ConfigProvider, Menu, Row, Col,
   Dropdown, Image, QRCode, Input, Switch, Form,
   List, Typography
 } from 'antd';
@@ -264,7 +264,7 @@ const ProjectProfile = () => (
               </Form.Item>
             </Col>
             <Col span={4}>
-              <Button style={{ backgroundColor: 'rgb(93, 100, 101)', color: 'rgb(240, 236, 236)',}}>Connect</Button>
+              <Button style={{ backgroundColor: 'rgb(93, 100, 101)', color: 'rgb(240, 236, 236)', }}>Connect</Button>
             </Col>
           </Row>
         </Form>
@@ -363,7 +363,7 @@ const ProjectProfile = () => (
       </div>
 
       <div>
-      <span style={{
+        <span style={{
           fontFamily: 'Roboto, sans-serif', fontSize: '18px', fontWeight: '300',
           lineHeight: '30px', letterSpacing: '0.02em', textAlign: 'left',
           backgroundColor: 'white', paddingTop: '20px', paddingBottom: '10px',
@@ -402,23 +402,21 @@ const ProjectProfile = () => (
 
       <div style={{ textAlign: 'center', }}>
 
-      <Form
+        <Form
           name="wrap"
-          labelCol={{ flex: '150px' }}
-          labelAlign="right"
-          labelWrap
-          wrapperCol={{ flex: 1 }}
+          labelCol={{ flex: '140px' }} // Adjusted for better responsiveness
+          wrapperCol={{ span: 14 }} // Adjusted for better responsiveness
           colon={false}
-          style={{ maxWidth: '100%', marginTop: '30px', }}
+          style={{ maxWidth: 800, marginTop: '30px', }}
         >
 
           <Row gutter={14}> {/* Use the gutter for spacing between columns */}
-          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
               <Form.Item
                 label="Deal ID"
                 name="deal_id"
               >
-                <Input disabled placeholder='ABC123'  />
+                <Input disabled placeholder='ABC123' />
               </Form.Item>
             </Col>
             <Col xs={24} sm={24} md={16} lg={16} xl={16}>
