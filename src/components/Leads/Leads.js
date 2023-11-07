@@ -98,19 +98,19 @@ const EditableTable = () => {
 
   const columns = [
     {
-      title: 'Customer ID',
+      title: 'ID',
       dataIndex: 'customer_id',
       width: '10%',
     },
     {
       title: 'Name',
       dataIndex: 'name',
-      width: '13%',
+      width: '9%',
     },
     {
       title: 'Leads From',
       dataIndex: 'leads_from',
-      width: '15%',
+      width: '12%',
     },
     {
       title: 'Projects',
@@ -137,7 +137,7 @@ const EditableTable = () => {
     {
       title: 'Trade Pro',
       dataIndex: 'trade_pro',
-      width: '8%',
+      width: '15%',
     },
     {
       title: 'Leads Quality',

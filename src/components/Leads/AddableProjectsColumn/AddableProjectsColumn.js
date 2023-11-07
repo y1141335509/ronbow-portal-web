@@ -118,7 +118,7 @@ const App = () => {
         />
       ) : (
         <Tag style={tagPlusStyle} icon={<PlusOutlined />} onClick={showInput}>
-          Add New Project
+          Add New
         </Tag>
       )}
     </Space>
