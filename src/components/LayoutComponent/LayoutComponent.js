@@ -6,7 +6,7 @@ import {
   UserOutlined, ToolOutlined, BookOutlined, CustomerServiceOutlined, ExportOutlined,
   VideoCameraOutlined, PlusSquareOutlined, ReadOutlined, CheckCircleOutlined,
   FundProjectionScreenOutlined, BulbOutlined, SolutionOutlined, FormOutlined,
-  TableOutlined, PhoneOutlined, LogoutOutlined,
+  TableOutlined, PhoneOutlined, LogoutOutlined, PlusCircleOutlined,
 } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 import AddShortcut from '../AddShortcut/AddShortcut';
@@ -27,7 +27,8 @@ const allShortcuts = [
   { key: '7', icon: <ExportOutlined />, label: 'Export' },
   { key: '8', icon: <ToolOutlined />, label: 'Tool' },
   { key: '9', icon: <SettingOutlined />, label: 'Settings' },
-  { key: '10', icon: <PlusSquareOutlined />, label: 'Add Shortcut', iconStyle: { bottom: '10%', position: 'absolute', } },
+  { key: '10', icon: <PlusSquareOutlined />, label: 'Customize', iconStyle: { bottom: '10%', position: 'absolute', } },
+  { key: '11', icon: <PlusCircleOutlined />, label: 'Add Shortcut', iconStyle: { bottom: '10%', position: 'absolute', } },
 
 ];
 
@@ -222,6 +223,8 @@ const LayoutComponent = ({ children }) => {
             onCancel={() => setIsModalVisible(false)}
             open={true}
           />
+
+
 
         </Layout>
 

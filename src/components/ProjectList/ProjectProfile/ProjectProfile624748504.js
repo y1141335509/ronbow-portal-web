@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Collapse, Divider, Button, ConfigProvider, Menu,
+  Collapse, Divider, Button, ConfigProvider, Menu, Row, Col, 
   Dropdown, Image, QRCode, Input, Switch, Form,
   List, Typography
 } from 'antd';
@@ -231,6 +231,44 @@ const ProjectProfile = () => (
       </span>
 
       <Divider style={{ opacity: '0', }} />
+
+
+      <div style={{ textAlign: 'center', }}>
+
+
+
+        <Form
+          name="wrap"
+          labelCol={{ flex: '140px' }} // Adjusted for better responsiveness
+          wrapperCol={{ span: 14 }} // Adjusted for better responsiveness
+          colon={false}
+          style={{ maxWidth: 800 }}
+        >
+          <Row gutter={24}> {/* Added gutter for spacing between columns */}
+            <Col span={12}> {/* Half the width of the row */}
+              <Form.Item
+                label="Deal ID"
+                name="deal_id"
+                rules={[{ required: true }]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+            <Col span={12}> {/* Half the width of the row */}
+              <Form.Item
+                label="Design Studio Link"
+                name="design_studio_link"
+                rules={[{ required: true }]}
+              >
+                <Input />
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
+
+      </div>
+
+
       <Collapse accordion style={{ width: 'auto' }} expandIconPosition='end' >
         <div style={{
           fontFamily: 'Roboto, sans-serif', fontSize: '18px', fontWeight: '300',
@@ -361,22 +399,36 @@ const ProjectProfile = () => (
 
       <div style={{ textAlign: 'center', }}>
 
-        <Form
+      <Form
           name="wrap"
-          labelCol={{ flex: '200px' }}
+          labelCol={{ flex: '150px' }}
           labelAlign="right"
           labelWrap
           wrapperCol={{ flex: 1 }}
           colon={false}
-          style={{ maxWidth: 600 }}
+          style={{ maxWidth: '100%', marginTop: '30px', }}
         >
-          <Form.Item label="Deal ID: " name="deal_id" rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
 
-          <Form.Item label="Design Studio Link: " name="design_studio_link" rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
+          <Row gutter={14}> {/* Use the gutter for spacing between columns */}
+          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+              <Form.Item
+                label="Deal ID"
+                name="deal_id"
+              >
+                <Input disabled placeholder='ABC123'  />
+              </Form.Item>
+            </Col>
+            <Col xs={24} sm={24} md={16} lg={16} xl={16}>
+              <Form.Item
+                label="Design Studio Link"
+                name="design_studio_link"
+              >
+                <Input placeholder='https://designstudio.ronbow.com/' disabled />
+              </Form.Item>
+            </Col>
+          </Row>
+
+
 
           <Form.Item label=" ">
             <Button type="primary" htmlType="confirm" style={{ marginTop: '15px', }}>

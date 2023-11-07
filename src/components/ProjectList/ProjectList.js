@@ -11,7 +11,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import AddProject from './AddProject/AddProject';
 import CurrentOrders from './CurrentOrders/CurrentOrders.js';
 import ArchivedOrders from './ArchivedOrders/ArchivedOrders';
-import LinkIcon from '@mui/icons-material/Link';
+
 
 
 
@@ -284,14 +284,6 @@ const EditableTable = () => {
         </p>
 
         <div style={{ marginRight: '50px', }}>
-
-
-          <a href="https://designstudio.ronbow.com/" target="_blank">
-            <span style={{ color: '#5d6465', textDecoration: 'underline', marginRight: '20px', }}>
-              Design Studio Link <ExportOutlined />
-            </span>
-          </a>
-          <span style={{ marginRight: '70px', }}>Deal ID</span>
 
 
           <FilterOutlined className="icon" />
