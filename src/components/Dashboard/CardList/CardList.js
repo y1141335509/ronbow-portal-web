@@ -1,5 +1,9 @@
 import React, { useState, } from 'react';
 import { Card, Button, Row, Col, Tag, Divider } from 'antd';
+import './CardList.css';
+
+
+
 
 const CardList = () => {
   const [viewOption, setViewOption] = useState('All');
@@ -9,19 +13,19 @@ const CardList = () => {
       { name: "Kevin's Kitchen - Palo Alto", date: '2023/10/05', status: 'New Lead' },
       //... add more data as needed
     ],
-    'Quote Provided': [
+    'Quote Presented': [
       { name: "John's Wet Bar - San Mateo", date: '2023/09/16', status: 'Designing' },
     ],
     'Design Fee Collected': [
       { name: "Kitty's Closet - Cupertino", date: '2023/08/16', status: 'Paid' },
     ],
     '50% Deposit Collected': [
-      // { name: 'Project G', date: '2023/03/10', status: 'Paid', },
-      // { name: 'Project H', date: '2023/10/01', status: 'Paid', },
+      { name: 'Project G', date: '2023/03/10', status: 'Paid', },
+      { name: 'Project H', date: '2023/12/01', status: 'Paid', },
     ],
     'Deal Won': [
-      // { name: 'Project I', date: '2022/11/31', status: 'Paid', },
-      // { name: 'Project J', date: '2023/10/10', status: 'Designing', },
+      { name: 'Project I', date: '2022/11/31', status: 'Paid', },
+      { name: 'Project J', date: '2023/12/10', status: 'Designing', },
     ],
     'Deal Lost': [
       // { name: 'Project K', date: '2023/11/10', status: 'New Lead', },
@@ -97,11 +101,11 @@ const CardList = () => {
             <Card title={cardTitle} bordered={true} size="small" headStyle={{ textAlign: 'center', }}>
               {cardsData[cardTitle].filter(filterData()).map((project) => (
                 <div>
-                  <p key={project.name}>
-                    {project.name} ({project.date})
+                  <p key={project.name} className='card-list-links'>
+                    <a href="/">{project.name} </a>
+                    {/* ({project.date}) */}
                   </p>
-                  <Tag key={project.name}>{project.status}</Tag>
-                  <Divider />
+                  {/* <Tag key={project.name}>{project.status}</Tag> */}
                 </div>
 
               ))}
