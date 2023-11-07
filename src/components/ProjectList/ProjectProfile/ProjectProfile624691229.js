@@ -237,7 +237,7 @@ const ProjectProfile = () => (
 
 
 
-        <Form
+      <Form
           name="wrap"
           labelCol={{ flex: '140px' }} // Adjusted for better responsiveness
           wrapperCol={{ span: 14 }} // Adjusted for better responsiveness
@@ -245,7 +245,7 @@ const ProjectProfile = () => (
           style={{ maxWidth: 800 }}
         >
           <Row gutter={24}> {/* Added gutter for spacing between columns */}
-            <Col span={12}> {/* Half the width of the row */}
+            <Col span={8}> {/* Half the width of the row */}
               <Form.Item
                 label="Deal ID"
                 name="deal_id"
@@ -263,11 +263,11 @@ const ProjectProfile = () => (
                 <Input />
               </Form.Item>
             </Col>
+            <Col span={4}>
+              <Button style={{ backgroundColor: 'rgb(93, 100, 101)', color: 'rgb(240, 236, 236)',}}>Connect</Button>
+            </Col>
           </Row>
         </Form>
-
-
-
 
       </div>
 
@@ -439,13 +439,13 @@ const ProjectProfile = () => (
           style={{ maxWidth: '100%', marginTop: '30px', }}
         >
 
-<Row gutter={14}> {/* Use the gutter for spacing between columns */}
-          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+          <Row gutter={14}> {/* Use the gutter for spacing between columns */}
+            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
               <Form.Item
                 label="Deal ID"
                 name="deal_id"
               >
-                <Input disabled placeholder='ABC123'  />
+                <Input disabled placeholder='ABC123' />
               </Form.Item>
             </Col>
             <Col xs={24} sm={24} md={16} lg={16} xl={16}>

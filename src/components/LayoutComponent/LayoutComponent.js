@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Layout, Menu, Input, ConfigProvider, Image } from 'antd';
+import { Layout, Menu, Input, ConfigProvider, Image, Form, Modal, Button,  } from 'antd';
 import {
   HomeOutlined, ScheduleOutlined, ContactsOutlined, ProjectOutlined,
   DollarOutlined, FireOutlined, AntDesignOutlined, CommentOutlined, SettingOutlined,
@@ -39,9 +39,17 @@ const LayoutComponent = ({ children }) => {
   const [selectedKey, setSelectedKey] = useState('1');
   const [shortcuts, setShortcuts] = useState(allShortcuts);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isFormVisible, setIsFormVisible] = useState(false); // New state for form visibility
 
 
   const navigate = useNavigate();
+
+  // Function to handle form submission
+  const handleFormSubmit = (values) => {
+    console.log('Form Data:', values);
+    setIsFormVisible(false); // Close the form once submitted
+    // Here you would handle adding the new shortcut data to your shortcuts state
+  };
 
 
   const handleShortcutSave = (selectedShortcutKeys) => {
@@ -79,6 +87,9 @@ const LayoutComponent = ({ children }) => {
     if (key === '10') {
       setIsModalVisible(true);
       return;
+    } else if (key === '11') {
+      setIsFormVisible(true);
+      return;
     }
 
     const path = shortcuts.find((s) => s.key === key)?.path;
@@ -96,6 +107,45 @@ const LayoutComponent = ({ children }) => {
     console.log('Search:', value);
     // Implement search functionality here
   };
+
+
+  const ShortcutFormModal = () => (
+    <Modal
+      title="Add New Shortcut"
+      visible={isFormVisible}
+      onCancel={() => setIsFormVisible(false)}
+      footer={null} // Remove default footer buttons
+    >
+      <Form
+        name="addShortcut"
+        initialValues={{ remember: true }}
+        onFinish={handleFormSubmit}
+      >
+        {/* <Form.Item
+          name="icon"
+          label="Shortcut Icon"
+          rules={[{ required: true, message: 'Please select an icon!' }]}
+        >
+          <Input placeholder="Shortcut Icon" />
+        </Form.Item> */}
+        <Form.Item name="label" label="Shortcut Name">
+          <Input placeholder="Shortcut Name" />
+        </Form.Item>
+        <Form.Item
+          name="path"
+          label="Shortcut Link"
+          rules={[{ required: true, message: 'Please input the shortcut link!' }]}
+        >
+          <Input placeholder="Shortcut Link" />
+        </Form.Item>
+        <Form.Item >
+          <Button type="primary" htmlType="submit">
+            Save
+          </Button>
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
 
 
 
@@ -224,6 +274,7 @@ const LayoutComponent = ({ children }) => {
             open={true}
           />
 
+          <ShortcutFormModal />
 
 
         </Layout>

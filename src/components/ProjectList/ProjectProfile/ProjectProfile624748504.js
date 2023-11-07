@@ -245,7 +245,7 @@ const ProjectProfile = () => (
           style={{ maxWidth: 800 }}
         >
           <Row gutter={24}> {/* Added gutter for spacing between columns */}
-            <Col span={12}> {/* Half the width of the row */}
+            <Col span={8}> {/* Half the width of the row */}
               <Form.Item
                 label="Deal ID"
                 name="deal_id"
@@ -262,6 +262,9 @@ const ProjectProfile = () => (
               >
                 <Input />
               </Form.Item>
+            </Col>
+            <Col span={4}>
+              <Button style={{ backgroundColor: 'rgb(93, 100, 101)', color: 'rgb(240, 236, 236)',}}>Connect</Button>
             </Col>
           </Row>
         </Form>
