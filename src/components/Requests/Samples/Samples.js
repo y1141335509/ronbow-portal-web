@@ -91,15 +91,25 @@ const App = () => {
         </Select>
       </Form.Item>
 
-      <img
-        width={200}
-        height={200}
-        src="https://cdn.ronbow.com/images/cabinets/Blue-Moon-Bay-SM-M12058.jpg"
-        alt="Sample"
-        style={{ marginLeft: '300px', }}
-        // style={{ width: '100%', height: 'auto' }}
-      />
+      <Form.Item>
+        <img
+          width={200}
+          height={200}
+          src="https://cdn.ronbow.com/images/cabinets/Blue-Moon-Bay-SM-M12058.jpg"
+          alt="Sample"
+          style={{ marginLeft: '300px', }}
+          // style={{ width: '100%', height: 'auto' }}
+        />
+      </Form.Item>
+
+      <Form.Item style={{ float: 'right', paddingRight: '150px', }}>
+        <Button style={{ backgroundColor: '#5d6465', color: '#F0ECEC', }}>Request</Button>
+      </Form.Item>
+
+      <br />
+      
     </Form>
+    
   );
 };
 
