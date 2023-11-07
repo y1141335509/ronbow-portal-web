@@ -142,7 +142,7 @@ const EditableTable = () => {
     {
       title: 'Leads Quality',
       dataIndex: 'leads_quality',
-      width: '15%',
+      width: '20%',
       render: (text, record) => {
         const items = [
           {
