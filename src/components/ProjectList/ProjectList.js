@@ -1,16 +1,17 @@
 
 import React, { useRef, useState } from 'react';
-import { PlusOutlined, ExportOutlined, SearchOutlined, FilterOutlined, } from '@ant-design/icons';
+import { PlusOutlined, ExportOutlined, SearchOutlined, FilterOutlined, FormOutlined, } from '@ant-design/icons';
 import {
   EditableProTable,
   ProCard,
   ProFormField,
 } from '@ant-design/pro-components';
-import { Button, Form, Input, Space, Tag, Divider, ConfigProvider } from 'antd';
+import { Button, Form, Input, Space, Tag, Divider, ConfigProvider, Tooltip } from 'antd';
 import { Link, Routes, Route } from 'react-router-dom';
 import AddProject from './AddProject/AddProject';
 import CurrentOrders from './CurrentOrders/CurrentOrders.js';
 import ArchivedOrders from './ArchivedOrders/ArchivedOrders';
+import LinkIcon from '@mui/icons-material/Link';
 
 
 
@@ -267,7 +268,7 @@ const EditableTable = () => {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#5D6465', colorSuccess: '#F0ECEC', colorDefault: '#bae637', 
+          colorPrimary: '#5D6465', colorSuccess: '#F0ECEC', colorDefault: '#bae637',
         }
       }}
     >
@@ -281,7 +282,18 @@ const EditableTable = () => {
           textAlign: "left"
         }}>
         </p>
+
         <div style={{ marginRight: '50px', }}>
+
+
+          <a href="https://designstudio.ronbow.com/" target="_blank">
+            <span style={{ color: '#5d6465', textDecoration: 'underline', marginRight: '20px', }}>
+              Design Studio Link <ExportOutlined />
+            </span>
+          </a>
+          <span style={{ marginRight: '70px', }}>Deal ID</span>
+
+
           <FilterOutlined className="icon" />
           <SearchOutlined className="icon" />
         </div>
@@ -316,7 +328,7 @@ const EditableTable = () => {
           }}
         />
 
-        
+
         <AddProject />
 
 
@@ -326,7 +338,7 @@ const EditableTable = () => {
         <div style={{ marginTop: '50px', }}></div>
 
         <ArchivedOrders />
-        
+
       </div>
     </ConfigProvider>
 
