@@ -137,7 +137,7 @@ const EditableTable = () => {
     {
       title: 'Trade Pro',
       dataIndex: 'trade_pro',
-      width: '10%',
+      width: '8%',
     },
     {
       title: 'Leads Quality',
