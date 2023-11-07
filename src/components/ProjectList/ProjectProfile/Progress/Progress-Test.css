@@ -23,3 +23,7 @@
 .MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-sizeMedium.MuiButton-textSizeMedium.css-nm8x1y-MuiButtonBase-root-MuiButton-root {
   color: rgb(93, 100, 101);
 }
+
+:where(.css-dev-only-do-not-override-45d1b4).ant-layout, :where(.css-dev-only-do-not-override-45d1b4).ant-layout * {
+  color: rgb(93, 100, 101);
+}
