@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect,  } from 'react';
 import {
   FormControl,
   FormControlLabel,
@@ -51,11 +51,30 @@ const theme = createTheme({
 
 const Signature = () => {
   const [selectedPackage, setSelectedPackage] = useState('');
+  const [checkedState, setCheckedState] = useState({});
 
   const handlePackageChange = (event, newPackage) => {
-    if (newPackage !== null) { // Prevent deselecting all options
+    if (newPackage !== null) {
       setSelectedPackage(newPackage);
     }
+  };
+
+  // This effect updates the checked state whenever the selectedPackage changes
+  useEffect(() => {
+    if (selectedPackage) {
+      const newCheckedState = packageOptions[selectedPackage].reduce((acc, option) => {
+        acc[option] = true; // Set all options to checked
+        return acc;
+      }, {});
+      setCheckedState(newCheckedState);
+    }
+  }, [selectedPackage]);
+
+  const handleCheckboxChange = (event) => {
+    setCheckedState({
+      ...checkedState,
+      [event.target.name]: event.target.checked,
+    });
   };
 
   // These are the checkboxes for each package
@@ -80,34 +99,40 @@ const Signature = () => {
   return (
     <ThemeProvider theme={theme}>
       <FormControl component="fieldset" fullWidth>
-      <FormLabel component="legend">Select a Package</FormLabel>
-      <ToggleButtonGroup
-        value={selectedPackage}
-        exclusive
-        onChange={handlePackageChange}
-        aria-label="package selection"
-      >
-        <ToggleButton value="designFee" aria-label="design fee">
-          $1500 Design Fee
-        </ToggleButton>
-        <ToggleButton value="deposit" aria-label="50% deposit">
-          50% Deposit
-        </ToggleButton>
-        <ToggleButton value="finalPay" aria-label="100% final pay">
-          100% Final Pay
-        </ToggleButton>
-      </ToggleButtonGroup>
+        <FormLabel component="legend">Select a Package</FormLabel>
+        <ToggleButtonGroup
+          value={selectedPackage}
+          exclusive
+          onChange={handlePackageChange}
+          aria-label="package selection"
+        >
+          <ToggleButton value="designFee" aria-label="design fee">
+            $1500 Design Fee
+          </ToggleButton>
+          <ToggleButton value="deposit" aria-label="50% deposit">
+            50% Deposit
+          </ToggleButton>
+          <ToggleButton value="finalPay" aria-label="100% final pay">
+            100% Final Pay
+          </ToggleButton>
+        </ToggleButtonGroup>
 
-      <FormGroup>
-        {selectedPackage && packageOptions[selectedPackage].map((option, index) => (
-          <FormControlLabel
-            key={index}
-            control={<Checkbox name={option} />}
-            label={option}
-          />
-        ))}
-      </FormGroup>
-    </FormControl>
+        <FormGroup>
+          {selectedPackage && packageOptions[selectedPackage].map((option, index) => (
+            <FormControlLabel
+              key={index}
+              control={
+                <Checkbox
+                  name={option}
+                  checked={checkedState[option] || false}
+                  onChange={handleCheckboxChange}
+                />
+              }
+              label={option}
+            />
+          ))}
+        </FormGroup>
+      </FormControl>
     </ThemeProvider>
   );
 };

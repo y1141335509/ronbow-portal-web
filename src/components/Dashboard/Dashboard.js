@@ -135,6 +135,9 @@ const App = () => {
 
         <div style={{ fontFamily: 'Roboto, sans-serif', width: '30%', marginLeft: '20px', float: 'right', }}>
           <h2>Announcement</h2>
+          <a href="https://system.netsuite.com/pages/customerlogin.jsp" target="_blank">
+            <p style={{ color: 'rgb(0, 0, 0, 0.88)', textDecoration: 'underline', }}>Top 10 Performers <ExportOutlined /></p>
+          </a>
           <ul>
             <li>Product: Vertical Gola is now available.
               <a href="https://www.ronbow.com/products" target="_blank">
