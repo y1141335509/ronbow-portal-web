@@ -186,7 +186,7 @@ const LayoutComponent = ({ children }) => {
                 onClick={() => setShowContent('leads')}
                 style={{ fontWeight: '200', color: 'black' }}
               >
-                <Link to="/leads">Leads</Link>
+                <Link to="/leads">Contacts</Link>
               </Menu.Item>
 
               <Menu.Item
